@@ -1,0 +1,28 @@
+Null Object Design Pattern is a behavioral design pattern that aims to provide an alternative to using null references in
+object-oriented programming. It is particularly useful in situations where you want to handle the absence of an object without
+explicitly checking for null and risking NullPointerExceptions.
+
+Problem with Null References:
+In many programming languages, including Java, using null references can lead to runtime errors like NullPointerExceptions (NPEs) \
+if not handled properly. For example:
+
+
+MyObject obj = null;
+obj.doSomething(); // This will throw a NullPointerException
+
+
+To avoid such errors, developers often need to write conditional checks to ensure that an object is not null before using it,
+which can lead to verbose and error-prone code.
+
+Solution with Null Object Design Pattern:
+The Null Object Design Pattern suggests creating a special null object that implements the same interface as the actual objects
+but provides no-op or default behavior. This null object is then used in place of null references, allowing the code to execute
+without unexpected null-related errors.
+
+Key Components:
+Interface/Abstract Class: Define an interface or abstract class that specifies the operations or behavior expected from objects.
+
+Concrete Classes: Implement concrete classes that provide actual functionality for the interface.
+
+Null Object: Create a special null object that also implements the interface but provides default or no-op implementations
+of the methods.

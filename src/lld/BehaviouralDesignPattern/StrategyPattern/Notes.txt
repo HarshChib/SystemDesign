@@ -1,0 +1,17 @@
+Explanation:
+Define a Strategy Interface: Start by defining an interface that declares a method for the algorithm(s) you want to encapsulate.
+
+Implement Concrete Strategies: Create one or more concrete classes that implement the strategy interface. Each class represents
+a different algorithm.
+
+Use Context Class: Create a context class that contains a reference to the strategy interface. This class allows clients to change
+the algorithm dynamically.
+
+Client Code: Clients can use the context class to select and execute a specific algorithm without knowing the details of how
+the algorithm works.
+
+In this example, we define the PaymentStrategy interface with a pay method. Then, we implement three concrete strategies
+(CreditCardStrategy, PayPalStrategy, and BitcoinStrategy). The PaymentContext class acts as the context that can switch between
+different payment strategies at runtime, allowing clients to use different payment methods interchangeably.
+
+Useful to pick dynamic strategy , avoid duplication of strategy logic and provides

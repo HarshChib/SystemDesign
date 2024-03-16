@@ -1,0 +1,4 @@
+In simple words, the Command pattern helps in organizing code by representing actions as objects. It promotes flexibility,
+extensibility, and separation of concerns by keeping the sender separate from the receiver and allowing for easy addition of
+new actions without changing existing code. It's especially useful when dealing with operations that need to be queued, logged,
+or undone.
