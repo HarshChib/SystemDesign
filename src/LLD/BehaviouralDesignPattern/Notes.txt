@@ -1,0 +1,28 @@
+Behavioral design patterns are a category of design patterns that deal with how objects interact and communicate with each other
+to accomplish tasks. These patterns focus on defining algorithms and patterns of communication between objects to achieve specific
+behaviors and functionalities. Behavioral design patterns help in making the system more flexible, reusable, and maintainable by promoting
+loose coupling between objects and separating responsibilities effectively.
+
+Here are some common behavioral design patterns:
+
+Observer Pattern: This pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+Strategy Pattern: The strategy pattern defines a family of algorithms, encapsulates each algorithm, and makes them interchangeable. This pattern allows the algorithm to vary independently from clients that use it.
+
+Command Pattern: The command pattern encapsulates a request as an object, thereby allowing for parameterization of clients with different requests, queuing of requests, and logging of requests.
+
+Chain of Responsibility Pattern: In this pattern, a request is passed along a chain of handlers, with each handler deciding either to process the request or pass it on to the next handler in the chain.
+
+Iterator Pattern: The iterator pattern provides a way to access the elements of a collection sequentially without exposing its underlying representation.
+
+State Pattern: The state pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+Template Method Pattern: This pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. It allows subclasses to redefine certain steps of an algorithm without changing its structure.
+
+Visitor Pattern: The visitor pattern defines a new operation to a set of objects without changing their classes. It is useful when you have to perform operations on a group of related objects without changing their structures.
+
+Interpreter Pattern: This pattern is used to define a grammar for interpreting sentences in a language and provides an interpreter to interpret sentences as per the defined grammar.
+
+Memento Pattern: The memento pattern captures and externalizes an object's internal state so that the object can be restored to this state later.
+
+Each behavioral pattern addresses specific aspects of object interaction and behavior, providing solutions to common design problems related to communication, encapsulation, and flexibility in software systems.
