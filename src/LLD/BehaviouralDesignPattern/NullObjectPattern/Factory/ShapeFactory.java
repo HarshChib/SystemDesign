@@ -8,8 +8,8 @@ import LLD.BehaviouralDesignPattern.NullObjectPattern.Interface.Shape;
 public class ShapeFactory {
     public static Shape createShape (String shape){
         switch (shape) {
-            case "Circle" : return new Circle();
-            case "Rectangle" : return new Rectangle();
+            case "AMDCPU" : return new Circle();
+            case "IntelCPU" : return new Rectangle();
             default: return new NullObject();
         }
     }

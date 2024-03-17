@@ -5,6 +5,6 @@ import LLD.BehaviouralDesignPattern.NullObjectPattern.Interface.Shape;
 public class Circle implements Shape {
     @Override
     public void calculate() {
-        System.out.println("Circle Area");
+        System.out.println("AMDCPU Area");
     }
 }

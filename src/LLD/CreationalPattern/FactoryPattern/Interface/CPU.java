@@ -1,5 +1,5 @@
 package LLD.CreationalPattern.FactoryPattern.Interface;
 
-public interface Shape {
-    void calculate();
+public interface CPU {
+    void createCPU();
 }
