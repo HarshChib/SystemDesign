@@ -1,0 +1,28 @@
+
+Let's revisit the example of the abstract factory pattern and explain how it differs from the factory method pattern.
+
+* Factory Method Pattern:
+
+1. In the factory method pattern, there is a single method responsible for creating objects. This method is typically defined in an interface or an abstract class, and its subclasses implement this method to create different types of objects.
+2. The factory method pattern is focused on creating a single type of object (e.g., a CPU or a GPU) and allows subclasses to provide the implementation details for creating specific instances of that type.
+3. It follows the "open-closed" principle, where classes are open for extension (new subclasses can be added) but closed for modification (existing classes are not changed).
+
+* Abstract Factory Pattern:
+
+1. In the abstract factory pattern, there is an interface for creating families of related or dependent objects. This interface defines a set of factory methods, each responsible for creating a different type of object from the same family.
+2. The abstract factory pattern is focused on creating multiple related objects that work together (e.g., a computer with a CPU and a GPU), ensuring that these objects are compatible with each other.
+3. It provides an additional layer of abstraction compared to the factory method pattern, as it deals with creating entire families of objects rather than individual objects.
+4. The abstract factory pattern is often used in scenarios where you need to switch between different families of objects (e.g., creating Intel-based computers vs. AMD-based computers) without changing the client code.
+Now, let's map these concepts to the example:
+
+Factory Method Pattern in the Example:
+
+In the example, the factory method pattern is represented by the ComputerFactory interface and its concrete implementations (IntelComputerFactory and AMDComputerFactory).
+The createCPU() and createGPU() methods in ComputerFactory act as factory methods responsible for creating specific types of CPUs and GPUs, respectively.
+Each concrete factory (IntelComputerFactory and AMDComputerFactory) provides the implementation details for creating Intel-based and AMD-based components, respectively.
+Abstract Factory Pattern in the Example:
+
+In the example, the abstract factory pattern is also demonstrated through the ComputerFactory interface and its concrete implementations.
+However, the key difference is that the abstract factory (ComputerFactory) is responsible for creating entire families of related objects (Intel-based or AMD-based computers), including CPUs and GPUs that work together seamlessly.
+The client code can switch between different families of objects (IntelComputerFactory or AMDComputerFactory) without directly dealing with the creation logic for individual components (CPUs and GPUs).
+In summary, the factory method pattern focuses on creating individual objects of a single type with subclasses providing the creation logic, while the abstract factory pattern focuses on creating families of related objects with an interface providing factory methods for each type of object in the family.
