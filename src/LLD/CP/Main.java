@@ -2,7 +2,6 @@
 
 import java.io.*;
 import java.lang.reflect.Array;
-import java.math.BigInteger;
 import java.util.*;
 
 public class Main {
@@ -94,12 +93,10 @@ public class Main {
 //        int t = 1;
         while (t--> 0) {
             String[] line1 = br.readLine().split(" ");
-//            String[] line2 = br.readLine().split(" ");
-//            String[] line3 = br.readLine().split(" ");
-            long a = Long.parseLong(line1[0]);
-            long b = Long.parseLong(line1[1]);
-            long c = Long.parseLong(line1[2]);
-//            long d = Long.parseLong(line1[3]);
+            String[] line2 = br.readLine().split(" ");
+            String[] line3 = br.readLine().split(" ");
+            long n = Long.parseLong(line1[0]);
+            long q = Long.parseLong(line1[1]);
 //            List<List<Integer>> list = new ArrayList<>();
 //            for(int i = 0; i < 4; i++) {
 //                List<Integer> temp = new ArrayList<>();
@@ -109,10 +106,14 @@ public class Main {
 //                }
 //                list.add(temp);
 //            }
-//            int[] arr = new int[(int)n];
-//            for (int i = 0; i < n; i++) {
-//                arr[i]=Integer.parseInt(line2[i]);;
-//            }
+            int[] arr = new int[(int)n];
+            for (int i = 0; i < n; i++) {
+                arr[i]=Integer.parseInt(line2[i]);;
+            }
+            int[] qry = new int[(int)q];
+            for (int i = 0; i < q; i++) {
+                qry[i]=Integer.parseInt(line3[i]);;
+            }
 //            int[] arr2 = new int[(int)n];
 //            for (int i = 0; i < n; i++) {
 //                arr2[i]=Integer.parseInt(line3[i]);
@@ -125,21 +126,33 @@ public class Main {
 //                    arr[i][j]=Integer.parseInt(line[j]);
 //                }
 //            }
-            solve(a,b,c);
+            solve(arr, qry, (int)n );
         }
     }
 
-    private static void solve(long allIds, long offset, long size) {
-        long total = offset+size;
-        long newOffset = 0;
-        long newSize = size;
-        if (allIds > offset) {
-            newSize = total - allIds;
+    private static void solve(int[] arr, int[] qry, int n) {
+        Queue<int[]> q = new LinkedList<>();
+        Arrays.sort(qry);
+        for (int i = 0; i < n; i++) {
+            if(arr[i]%2==0)
+                q.add(new int[]{arr[i],i});
         }
-        else{
-            newOffset = offset - allIds;
+        for(int i : qry) {
+            int size = q.size();
+            for (int j = 0; j < size; j++) {
+                int[] temp = q.poll();
+                if(temp[0] % Math.pow(2,i)==0) {
+                    q.add(new int[]{(int) (temp[0]+Math.pow(2,i-1)),temp[1]});
+                }else {
+                    q.add(new int[]{temp[0], temp[1]});
+                }
+            }
         }
-        System.out.println(newOffset+" "+newSize);
+        while (!q.isEmpty()) {
+            int[] temp = q.poll();
+            arr[temp[1]] = temp[0];
+        }
+        printArray(arr);
     }
 
 
